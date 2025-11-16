@@ -1,0 +1,20 @@
+name: Hola-mundo
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  run-script-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Make script executable
+        run: chmod +x ./holamundo.sh
+
+      - name: Run script
+        run: ./holamundo.sh
